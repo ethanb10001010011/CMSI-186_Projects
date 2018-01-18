@@ -29,6 +29,13 @@ public class CalendarStuff {
    */
    private static final int SUNDAY    = 0;
    private static final int MONDAY    = SUNDAY    + 1;
+   private static final int TUESDAY    = MONDAY    + 1;
+   private static final int WEDNESDAY    = TUESDAY    + 1;
+   private static final int THURSDAY    = WEDNESDAY    + 1;
+   private static final int FRIDAY    = THURSDAY    + 1;
+   private static final int SATURDAY    = FRIDAY    + 1;
+  
+
   // you can finish the rest on your own
   
   /**
