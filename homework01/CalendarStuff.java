@@ -34,17 +34,23 @@ public class CalendarStuff {
    private static final int THURSDAY    = WEDNESDAY    + 1;
    private static final int FRIDAY    = THURSDAY    + 1;
    private static final int SATURDAY    = FRIDAY    + 1;
-  
-
-  // you can finish the rest on your own
-  
+   
   /**
    * A listing of the months of the year, assigning numbers; I suppose these could be ENUMs instead, but whatever
    */
    private static final int JANUARY    = 0;
-   private static final int FEBRUARY   = JANUARY   + 1;
-  // you can finish these on your own, too
-  
+   private static final int FEBRUARY   = JANUARY   + 1
+   private static final int MARCH   = FEBRUARY   + 1;
+   private static final int APRIL   = MARCH   + 1;
+   private static final int MAY   = APRIL   + 1;
+   private static final int JUNE   = MAY   + 1;
+   private static final int JULY   = JUNE   + 1;
+   private static final int AUGUST   = JULY   + 1;
+   private static final int SEPTEMBER   = AUGUST   + 1;
+   private static final int OCTOBER   = SEPTEMBER   + 1;
+   private static final int NOVEMBER   = OCTOBER   + 1;
+   private static final int DECEMBER   = NOVEMBER   + 1;
+ 
   /**
    * An array containing the number of days in each month
    *  NOTE: this excludes leap years, so those will be handled as special cases
@@ -53,21 +59,20 @@ public class CalendarStuff {
    private static int[]    days        = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
   /**
-   * The constructor for the class
-   */
-   public CalendarStuffEmpty() {
-      System.out.println( "Constructor called..." );  // replace this with the actual code
-   }
-
-  /**
    * A method to determine if the year argument is a leap year or not<br />
    *  Leap years are every four years, except for even-hundred years, except for every 400
    * @param    year  long containing four-digit year
-   * @return         boolean which is true if the parameter is a leap year
+   * @return   boolean which is true if the parameter is a leap year
    */
-   public static boolean isLeapYear( long year ) {
-      return true;  // replace this with the actual code
-   }
+   public static boolean isLeapYear ( long year ) {
+      if ( year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ) {
+        return true;
+      } else if ( year % 4 == 0 && year % 100 != 0 ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
 
   /**
    * A method to calculate the days in a month, including leap years
@@ -78,8 +83,61 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static long daysInMonth( long month, long year ) {
-      return 33;  // replace this with the actual code
-   }
+    long numDays = 0;
+      if ( isLeapYear(year) ) {
+        if ( month == 0 ) {
+          numDays = 31;
+        } else if ( month == 1 ) {
+          numDays = 29;
+        } else if ( month == 2 ) {
+          numDays = 31;
+        } else if ( month == 3 ) {
+          numDays = 30;
+        } else if ( month == 4 ) {
+          numDays = 31;
+        } else if ( month == 5 ) {
+          numDays = 30;
+        } else if ( month == 6 ) {
+          numDays = 31;
+        } else if ( month == 7 ) {
+          numDays = 31;
+        } else if ( month == 8 ) {
+          numDays = 30;
+        } else if ( month == 9 ) {
+          numDays = 31;
+        } else if ( month == 10 ) {
+          numDays = 30;
+        } else if ( month == 11 ) {
+          numDays = 31;
+        }
+      } else {
+        if ( month == 0 ) {
+          numDays = 31;
+        } else if ( month == 1 ) {
+          numDays = 28;
+        } else if ( month == 2 ) {
+          numDays = 31;
+        } else if ( month == 3 ) {
+          numDays = 30;
+        } else if ( month == 4 ) {
+          numDays = 31;
+        } else if ( month == 5 ) {
+          numDays = 30;
+        } else if ( month == 6 ) {
+          numDays = 31;
+        } else if ( month == 7 ) {
+          numDays = 31;
+        } else if ( month == 8 ) {
+          numDays = 30;
+        } else if ( month == 9 ) {
+          numDays = 31;
+        } else if ( month == 10 ) {
+          numDays = 30;
+        } else if ( month == 11 ) {
+          numDays = 31;
+        }
+      }
+    }
 
   /**
    * A method to determine if two dates are exactly equal
@@ -92,7 +150,11 @@ public class CalendarStuff {
    * @return          boolean which is true if the two dates are exactly the same
    */
    public static boolean dateEquals( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      return true;  // replace this with the actual code
+      if ( month1 == month2 && day1 == day2 && year1 == year2 ) {
+        return true;
+      } else {
+        return false;
+      }
    }
 
   /**
@@ -106,7 +168,40 @@ public class CalendarStuff {
    * @return          int    -1/0/+1 if first date is less than/equal to/greater than second
    */
    public static int compareDate( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      return 0;  // replace this with the actual code
+     String dayString1 = "" + day1;
+     String monthString1 = "" + month1;
+     String yearString1 = "" + year1;
+     String dayString2 = "" + day2;
+     String monthString2 = "" + month2;
+     String yearString2 = "" + year2;
+
+     if ( day1 < 10 ) {
+       dayString1 = "0" + dayString1;
+     }
+
+     if ( day2 < 10 ) {
+       dayString2 = "0" + dayString2;
+     }
+
+     if ( month1 < 10 ) {
+       monthString1 = "0" + monthString1;
+     }
+
+     if ( month2 < 10 ) {
+       monthString2 = "0" + monthString2;
+     }
+
+     String date1 = "" + yearString1 + monthString1 + dayString1;
+     String date2 = "" + yearString2 + monthString2 + dayString2;
+
+     if ( Integer.parseInt(date1) > Integer.parseInt(date2) ) {
+       return 1;
+     } else if ( Integer.parseInt(date1) == Integer.parseInt(date2) ) {
+       return 0;
+     } else {
+       return -1;
+     }
+
    }
 
   /**
