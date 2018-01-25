@@ -1,27 +1,20 @@
-/**
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  CalendarStuff.java
- *  Purpose       :  Provides a class with supporting methods for CountTheDays.java program
- *  Author        :  B.J. Johnson (prototype)
- *  Date          :  2017-01-02 (prototype)
- *  Author        :  <Ethan Boone>
- *  Date          :  <2018.01.23>
- *  Description   :  This file provides the supporting methods for the CountTheDays program which will
- *                   calculate the number of days between two dates.  It shows the use of modularization
- *                   when writing Java code, and how the Java compiler can "figure things out" on its
- *                   own at "compile time".  It also provides examples of proper documentation, and uses
- *                   the source file header template as specified in the "Greeter.java" template program
- *                   file for use in CMSI 186, Spring 2017.
+ *  Purpose       :  Contains all of the methods for homework assignment #01!
+ *  Author        :  Ethan Boone
+ *  Date          :  2018-01-25
+ *  Description   :  Methods for homework assignment #01.
  *  Notes         :  None
  *  Warnings      :  None
  *  Exceptions    :  None
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  Revision History
- *  ----------------
+ *  ---------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
- *  @version 1.0.0  2017-01-02  B.J. Johnson  Initial writing and release
- *  @version 1.0.1  2017-12-25  B.J. Johnson  Updated for Spring 2018
- */
+ *  @version 1.0.0  2017-01-25  Ethan Boone    Initial writing and release
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 public class CalendarStuff {
 
   /**
