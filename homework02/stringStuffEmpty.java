@@ -125,9 +125,9 @@ public class StringStuffEmpty {
       System.out.println( isPalindrome( pal3 ) );
       System.out.println( isPalindrome( pal4 ) );
       System.out.println( isPalindrome( pal5 ) );
-      System.out.println( "evensOnly()        returns: " + evensOnly( "REHEARSALSZ" ) );
-      System.out.println( "evensOnly()        returns: " + evensOnly( "REhearSALsz" ) );
-      System.out.println( "evensOnlyNoDupes() returns: " + evensOnlyNoDupes( "REhearSALsz" ) );
+      System.out.println( "evensOnly()        returns: " + evensOnly( "XYloPHonES" ) );
+      System.out.println( "evensOnly()        returns: " + evensOnly( "XYloPHonES" ) );
+      System.out.println( "evensOnlyNoDupes() returns: " + evensOnlyNoDupes( "XYloPHonES" ) );
       System.out.println( "oddsOnly()         returns: " + oddsOnly( "xylophones" ) );
       System.out.println( "oddsOnly()         returns: " + oddsOnly( "XYloPHonES" ) );
       System.out.println( "oddsOnlyNoDupes()  returns: " + oddsOnlyNoDupes( "XYloPHonES" ) );
