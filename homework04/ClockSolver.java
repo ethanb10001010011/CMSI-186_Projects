@@ -27,7 +27,7 @@ public class ClockSolver {
    */
    private final double MAX_TIME_SLICE_IN_SECONDS  = 1800.00;
    private final double DEFAULT_TIME_SLICE_SECONDS = 60.0;
-   private final double EPSILON_VALUE              = 0.1;      // small value for double-precision comparisons
+   private static double EPSILON_VALUE              = 0.2;      // small value for double-precision comparisons
    private static double[] clockArgs;
 
   /**
@@ -88,7 +88,6 @@ public class ClockSolver {
    */
    public static void main( String[] args ) {
       int numTimes = 0;
-      args = new String[]{"65", "654"};
       ClockSolver cse = new ClockSolver();
       Clock clock = new Clock( args );
       cse.handleInitialArguments( args );
@@ -101,7 +100,7 @@ public class ClockSolver {
          System.out.println("Currently, the time on your clock is " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds.");
          System.out.println("Your hour hand angle is " + clock.getHourHandAngle() + ", and your minute hand angle is " + clock.getMinuteHandAngle() + ".");
          System.out.println("This means that your hands are " + clock.getHandAngle() + ", or roughly " + Math.round(clock.getHandAngle()) + " degrees apart." );
-         if ( Math.round(clock.getHandAngle()) == clockArgs[0] ) {
+         if ( Math.abs(clock.getHandAngle() - clockArgs[0]) < EPSILON_VALUE) {
             numTimes += 1;
             System.out.println( "The desired angle of " + clockArgs[0] + " degrees was found at " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds. The number of times we've found this angle in this simulation is " + numTimes + ".");
          }
