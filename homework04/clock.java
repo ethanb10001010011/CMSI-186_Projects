@@ -28,7 +28,7 @@ public class Clock {
    private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
    private double durationSec;
    private double timeSlice;
-   private double current, angleArg, timeSliceArg;
+   private double current, angleArg;
 
   /**
    *  Constructor goes here
@@ -52,8 +52,8 @@ public class Clock {
    *  @return double-precision value of the current clock tick
    */
    public double tick() {
-      double now = durationSec + timeSlice;
-      return now;
+      durationSec += timeSlice;
+      return durationSec;
    }
 
   /**
@@ -86,9 +86,9 @@ public class Clock {
       if(argValue.equals(0) || argValue.equals(null) || argValue.equals("")) {
         return DEFAULT_TIME_SLICE_IN_SECONDS;
       }
-      timeSliceArg = Double.parseDouble(argValue);
-      if ( timeSliceArg >= 0 ){
-         return timeSliceArg;
+      timeSlice = Double.parseDouble(argValue);
+      if ( timeSlice >= 0 ){
+         return timeSlice;
       } else {
          throw new NumberFormatException();
       }
@@ -137,7 +137,7 @@ public class Clock {
    *  @return String value of the current clock
    */
    public String toString() {
-      return "The desired angle is " + angleArg + " and the desired time slice is " + timeSliceArg;
+      return "The desired angle is " + angleArg + " and the desired time slice is " + timeSlice;
    }
 
   /**
@@ -147,10 +147,11 @@ public class Clock {
    *  be sure to make LOTS of tests!!
    *  remember you are trying to BREAK your code, not just prove it works!
    */
-   public static void main( String args[] ) {
+   public static void main( String[] args ) {
       System.out.println( "\nCLOCK CLASS TESTER PROGRAM\n" +
                           "--------------------------\n" );
       System.out.println( "  Creating a new clock: " );
+      args = new String[]{"120", "240"};
       Clock clock = new Clock( args );
       System.out.println( "    New clock created: " + clock.toString() );
       System.out.println( "    Testing validateAngleArg()....");
