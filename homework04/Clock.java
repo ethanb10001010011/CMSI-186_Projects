@@ -151,7 +151,6 @@ public class Clock {
       System.out.println( "\nCLOCK CLASS TESTER PROGRAM\n" +
                           "--------------------------\n" );
       System.out.println( "  Creating a new clock: " );
-      args = new String[]{"120", "240"};
       Clock clock = new Clock( args );
       System.out.println( "    New clock created: " + clock.toString() );
       System.out.println( "    Testing validateAngleArg()....");
