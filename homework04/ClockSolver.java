@@ -86,10 +86,11 @@ public class ClockSolver {
    *                args[0] is the angle for which we are looking
    *                args[1] is the time slice; this is optional and defaults to 60 seconds
    */
-   public static void main( String args[] ) {
+   public static void main( String[] args ) {
       int numTimes = 0;
+      args = new String[]{"30", "10"};
       ClockSolver cse = new ClockSolver();
-      Clock clock    = new Clock( args );
+      Clock clock = new Clock( args );
       cse.handleInitialArguments( args );
       DecimalFormat formatInput = new DecimalFormat("#00.0");
       String[] timeArgs = new String[3];
@@ -97,9 +98,12 @@ public class ClockSolver {
          timeArgs[0] = formatInput.format( Math.round( clock.getTotalSeconds() / 3600 - .5) );
          timeArgs[1] = formatInput.format( Math.round( ( clock.getTotalSeconds() % 3600 ) / 60 - .5 ) );
          timeArgs[2] = formatInput.format( clock.getTotalSeconds() % 60 );
-         if ( clock.getHandAngle() == 0) {
+         //System.out.println("Currently, the time on your clock is " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds.");
+         //System.out.println("Your hour hand angle is " + clock.getHourHandAngle() + ", and your minute hand angle is " + clock.getMinuteHandAngle() + ".");
+         //System.out.println("This means that your hands are " + clock.getHandAngle() + " degrees apart.");
+         if ( Math.floor(clock.getHandAngle()) == clockArgs[0] ) {
             numTimes += 1;
-            System.out.println( "The desired angle of " + clockArgs[0] + "was found at " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds. The number of times we've found the angle in this simulation is " + numTimes + ".");
+            System.out.println( "The desired angle of " + clockArgs[0] + " was found at " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds. The number of times we've found this angle in this simulation is " + numTimes + ".");
          }
          clock.tick();
       }
