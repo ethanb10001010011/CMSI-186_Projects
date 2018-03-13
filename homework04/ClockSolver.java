@@ -88,7 +88,7 @@ public class ClockSolver {
    */
    public static void main( String[] args ) {
       int numTimes = 0;
-      args = new String[]{"30", "10"};
+      args = new String[]{"65", "654"};
       ClockSolver cse = new ClockSolver();
       Clock clock = new Clock( args );
       cse.handleInitialArguments( args );
@@ -98,12 +98,12 @@ public class ClockSolver {
          timeArgs[0] = formatInput.format( Math.round( clock.getTotalSeconds() / 3600 - .5) );
          timeArgs[1] = formatInput.format( Math.round( ( clock.getTotalSeconds() % 3600 ) / 60 - .5 ) );
          timeArgs[2] = formatInput.format( clock.getTotalSeconds() % 60 );
-         //System.out.println("Currently, the time on your clock is " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds.");
-         //System.out.println("Your hour hand angle is " + clock.getHourHandAngle() + ", and your minute hand angle is " + clock.getMinuteHandAngle() + ".");
-         //System.out.println("This means that your hands are " + clock.getHandAngle() + " degrees apart.");
-         if ( Math.floor(clock.getHandAngle()) == clockArgs[0] ) {
+         System.out.println("Currently, the time on your clock is " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds.");
+         System.out.println("Your hour hand angle is " + clock.getHourHandAngle() + ", and your minute hand angle is " + clock.getMinuteHandAngle() + ".");
+         System.out.println("This means that your hands are " + clock.getHandAngle() + ", or roughly " + Math.round(clock.getHandAngle()) + " degrees apart." );
+         if ( Math.round(clock.getHandAngle()) == clockArgs[0] ) {
             numTimes += 1;
-            System.out.println( "The desired angle of " + clockArgs[0] + " was found at " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds. The number of times we've found this angle in this simulation is " + numTimes + ".");
+            System.out.println( "The desired angle of " + clockArgs[0] + " degrees was found at " + timeArgs[0] + " hours, " + timeArgs[1] + " minutes, and " + timeArgs[2] + " seconds. The number of times we've found this angle in this simulation is " + numTimes + ".");
          }
          clock.tick();
       }
