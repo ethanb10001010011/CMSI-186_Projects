@@ -106,7 +106,7 @@ public class Ball {
    public String toString() {
       DecimalFormat positionString = new DecimalFormat( "#0.00");
       DecimalFormat speedString = new DecimalFormat( "#0.0000" );
-      String output = "The position is" + positionString.format( currPosition[0] ) + " for the x-axis, and " + positionString.format( currPosition[1] ) + " for the y-axis.";
+      String output = "The position is " + positionString.format( currPosition[0] ) + " for the x-axis, and " + positionString.format( currPosition[1] ) + " for the y-axis.";
            
       if( !isInBounds ) {
          output += "\nThe ball is out of bounds.";
