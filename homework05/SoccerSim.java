@@ -10,8 +10,8 @@ public class SoccerSim {
   private static final double DEFAULT_TIME_SLICE = 1.0;
 
   private double[] fieldDimensions = new double[2]; //length, width
+  private int numBalls;
   private Ball[] bagOBalls = null;
-  private int numBalls = 0;
   private Clock timeKeeper = null;
   private double optionalTimeSlice = DEFAULT_TIME_SLICE;
   private boolean firstReport = true;
@@ -48,6 +48,9 @@ public class SoccerSim {
         
 
         numBalls = (int) Math.floor( arguments.length / 4 );
+        bagOBalls = new Ball[numBalls];
+        
+        
         if( !timeSliceArgPresent ) {
           if( (numBalls * 4) != arguments.length ) {
             throw new IllegalArgumentException();
@@ -62,9 +65,10 @@ public class SoccerSim {
 
         int i = 0;
         int j = 0;
-        while( j < arguments.length ) {
+        while( j < arguments.length - 1 ) {
           try {
             this.bagOBalls[i] = new Ball( Double.parseDouble( arguments[j + 0] ), Double.parseDouble( arguments[j + 1] ), Double.parseDouble( arguments[j + 2] ), Double.parseDouble( arguments[j + 3] ) );
+	System.out.println( arguments[j+0] );
           }
           catch( NumberFormatException nfe ) {
             System.out.println( "You have entered invalid arguments." );
@@ -105,7 +109,7 @@ public class SoccerSim {
       String output = "";
       if( firstReport ) {
         firstReport = false;
-        output += "\nFirst report at 00:00:00.0000. The field is " + FIELD_LENGTH + " feet by " + FIELD_WIDTH + " feet. There is a pole at " + POLE_LOC[0] + "," + POLE_LOC[1] +".";
+        output += "\nFirst report at 00:00:00.0000. The field is " + FIELD_LENGTH + " feet by " + FIELD_WIDTH + " feet. There is a pole at " + POLE_LOC[0] + ", " + POLE_LOC[1] +".";
       } else {
         output += "\nProgress report at " + timeKeeper.toStringColons() + ".";
       }
