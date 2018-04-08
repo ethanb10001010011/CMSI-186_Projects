@@ -79,14 +79,14 @@ public class Ball {
    *  @return  double-precision two element array of new velocity values
    */
    public double[] updateSpeed( double timeSlice ) {
-      currSpeed[0] *= Math.pow( 0.99, timeSlice );
-      currSpeed[1] *= Math.pow( 0.99, timeSlice );
+      currSpeed[0] = xSpeed * Math.pow( 0.99, timeSlice );
+      currSpeed[1] = ySpeed * Math.pow( 0.99, timeSlice );
       return currSpeed;
    }
 
    public double[] updatePosition( double timeSlice ) {
-      currPosition[0] += currSpeed[0];
-      currPosition[1] += currSpeed[1];
+      currPosition[0] = xPos + currSpeed[0];
+      currPosition[1] = yPos + currSpeed[1];
       return currPosition;
    }
 
@@ -127,9 +127,6 @@ public class Ball {
       Ball ball1 = new Ball( 12, 42, 4, 6 );
       Ball ball2 = new Ball( 34, 21, 7, 3 );
       Ball ball3 = new Ball( 65, 23, 2, 3);
-      System.out.println( "Ball 1 toString is " + ball1.toString() );
-      System.out.println( "Ball 2 toString is " + ball2.toString() );
-      System.out.println( "Ball 3 toString is " + ball3.toString() );
       ball1.move( 1 );
       ball2.move( .4 );
       ball3.move( 4.3 );
