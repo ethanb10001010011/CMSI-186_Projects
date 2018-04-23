@@ -439,7 +439,7 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public static void main( String[] args ) {
       System.out.println( "\n  Hello, world, from the BrobInt program!!\n" );
-      System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
+      //System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
       BrobInt tester1 = new BrobInt("-0134267472");
       BrobInt tester2 = new BrobInt("-0008379428");
       BrobInt tester3 = new BrobInt("0");
