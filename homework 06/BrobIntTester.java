@@ -616,7 +616,26 @@ public class BrobIntTester {
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
       
       
+      BrobInt tester1 = new BrobInt("-0134267472");
+      BrobInt tester2 = new BrobInt("-0008379428");
+      BrobInt tester3 = new BrobInt("0");
+      BrobInt tester4 = new BrobInt("-2");
+      System.out.println("tester1 value is " + tester1.toString());
+      System.out.println("tester2 value is " + tester2.toString());
+      System.out.println("the sum of the two tester values is: " + tester1.addInt(tester2).toString());
+      System.out.println("the difference of the two tester values is: " + tester2.subtractInt(tester1).toString());
+      System.out.println("the difference of the two tester [ 3 & 4 ] values is: " + tester3.subtractInt(tester4).toString());
       
+      
+      
+      
+      BrobInt[] fibSequence = new BrobInt[ Integer.parseInt(args[0]) + 1];
+      fibSequence[0] = new BrobInt("0");
+      fibSequence[1] = new BrobInt("1");
+      for ( int i = 2; i < fibSequence.length; i++ ) {
+          fibSequence[i] = new BrobInt(fibSequence[i-1].addInt(fibSequence[i-2]).toString());
+      }
+      System.out.println("The " + args[0] + "th term in the fibonacci sequence is " + fibSequence[fibSequence.length - 1]);
       
       
       System.exit( 0 );
