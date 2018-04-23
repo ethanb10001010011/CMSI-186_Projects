@@ -452,14 +452,15 @@ public class BrobInt {
       
       
       
-      
-      BrobInt[] fibSequence = new BrobInt[ Integer.parseInt(args[0]) + 1];
-      fibSequence[0] = new BrobInt("0");
-      fibSequence[1] = new BrobInt("1");
-      for ( int i = 2; i < fibSequence.length; i++ ) {
-          fibSequence[i] = new BrobInt(fibSequence[i-1].addInt(fibSequence[i-2]).toString());
+      if ( args[0] > 1 ) {
+         BrobInt[] fibSequence = new BrobInt[ Integer.parseInt(args[0]) + 1];
+         fibSequence[0] = new BrobInt("0");
+         fibSequence[1] = new BrobInt("1");
+         for ( int i = 2; i < fibSequence.length; i++ ) {
+             fibSequence[i] = new BrobInt(fibSequence[i-1].addInt(fibSequence[i-2]).toString());
+         }
+         System.out.println("The " + args[0] + "th term in the fibonacci sequence is " + fibSequence[fibSequence.length - 1]);
       }
-      System.out.println("The " + args[0] + "th term in the fibonacci sequence is " + fibSequence[fibSequence.length - 1]);
       
       
       
