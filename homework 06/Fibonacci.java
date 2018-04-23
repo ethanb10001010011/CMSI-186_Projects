@@ -86,7 +86,7 @@ public class Fibonacci {
 
 
       
-      if ( Integer.parseInt(args[0]) > 1 ) {
+      if ( Integer.parseInt(args[0]) >= 1 ) {
          BrobInt[] fibSequence = new BrobInt[ Integer.parseInt(args[0]) + 1];
          fibSequence[0] = new BrobInt("0");
          fibSequence[1] = new BrobInt("1");
